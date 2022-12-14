@@ -63,6 +63,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 
   color: var(--white);
 }
@@ -382,42 +383,98 @@ button {
 
 .bubbles {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-row: auto;
-  gap: var(--g-gap, 2rem);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.25fr 1fr;
+  gap: var(--g-gap, 0rem);
   padding: clamp(1rem, 2vw + 1rem, 5rem);
 }
 
+.bubbles::before {
+  content: "";
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.bubbles > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.left-bubble > h2,
+.right-bubble > h2 {
+  position: relative;
+  top: 15px;
+  width: 75%;
+
+  font-size: clamp(1.5rem, 7.5vw + 0rem, 3rem);
+  line-height: clamp(1.8rem, 13.5vw + -0.9rem, 4.5rem);
+  font-weight: 700;
+
+  margin-inline: auto;
+}
+
 .left-bubble {
-  grid-column: 2 / 9;
+  grid-column: 1;
+  min-width: 0;
+  width: 100%;
 
   padding: clamp(2rem, 2vw + 1rem, 4rem);
 
-  border-radius: 10px;
+  text-align: center;
+  border-radius: 100%;
   /*   box-shadow: 0px 2px 5px 2px var(--white); */
+}
+
+.left-bubble > p,
+.right-bubble > p {
+  font-size: clamp(1rem, 7.5vw + -0.5rem, 2.5rem);
+  line-height: clamp(1.2rem, 12.75vw + -1.35rem, 3.75rem);
 }
 
 .right-bubble {
-  grid-column: 2 / 9;
+  grid-column: 1;
+  grid-row: 3;
+  min-width: 0;
+  width: 100%;
+
   padding: clamp(2rem, 2vw + 1rem, 4rem);
 
-  border-radius: 10px;
+  text-align: center;
+  border-radius: 100%;
   /*   box-shadow: 0px 2px 5px 2px var(--white); */
 }
 
-@media (min-width: 40em) {
+@media (min-width: 40rem) {
   .bubbles {
-    grid-template-columns: repeat(7, 1fr);
-    max-width: 80em;
+    grid-template-columns: 1fr 0.25fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    max-width: min(80em, 100%);
     margin: auto;
   }
 
   .left-bubble {
-    grid-column: 1 / 4;
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+
+  .left-bubble > h2,
+  .right-bubble > h2 {
+    font-size: clamp(1.625rem, 3.438vw + 0.25rem, 3rem);
+    line-height: clamp(1.788rem, 5.281vw + -0.325rem, 3.9rem);
+  }
+
+  .left-bubble > p,
+  .right-bubble > p {
+    font-size: clamp(1.063rem, 2.656vw + 0rem, 2.125rem);
+    line-height: clamp(1.169rem, 3.984vw + -0.425rem, 2.763rem);
   }
 
   .right-bubble {
-    grid-column: 5 / 8;
+    grid-column: 3 / 4;
+    grid-row: 1;
   }
 }
 
