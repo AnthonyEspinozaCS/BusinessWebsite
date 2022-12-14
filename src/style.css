@@ -9,8 +9,9 @@
   --alice-blue: #e1eff6ff;
   --russian-green: #749c75ff;
   --winter-sky: #f42272ff; */
-  /**/
+
   --white: hsla(6, 50%, 96%, 1);
+  --white: #fff;
   --accent: #ffa101;
   --accent-2: #b3dee5;
   --accent-3: #fae6b1;
