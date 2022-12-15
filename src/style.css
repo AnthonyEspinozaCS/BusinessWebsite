@@ -361,8 +361,10 @@ button {
 .about-us {
   /* width: 90%;
   margin-inline: auto; */
+  position: relative;
+  max-width: 80rem;
 
-  border-radius: 10px;
+  margin-inline: auto;
 }
 
 .about-us,
