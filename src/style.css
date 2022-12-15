@@ -34,8 +34,8 @@
   --fs-nav: clamp(1rem, 1.25vw + 0.5rem, 2rem);
 
   /* font-families */
-  --ff-serif: "Roboto", serif;
-  --ff-sans-normal: "Barlow", sans-serif;
+  --ff-serif: Arial, Helvetica, sans-serif;
+  --ff-sans-normal: Arial, Helvetica, sans-serif;
 }
 
 *,
