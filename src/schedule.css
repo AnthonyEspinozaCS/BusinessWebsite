@@ -3,7 +3,30 @@
 }
 
 .schedule-section h1 {
-  padding: 0 0 1rem;
+  padding: 0 0 2rem;
 
   font-weight: 700;
+  line-height: 1.1;
+}
+
+.schedule-section p {
+  padding: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.schedule-section button {
+  display: inline-block;
+  width: max-content;
+
+  margin: 1rem 0 1rem;
+  padding: 1rem 1.5rem;
+
+  color: black;
+  background: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 30px;
 }

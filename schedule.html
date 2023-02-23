@@ -69,46 +69,64 @@
 
     <main>
       <section class="schedule-section container text-black">
-        <h1 class="ff-serif fs-800">Schedule a Phone Call</h1>
+        <h1 class="ff-serif fs-600">
+          Let's discuss how we can bring your vision to life - schedule a call
+          with us today!
+        </h1>
         <p class="ff-sans-normal fs-medium">
-          Does your business need an elegnant and well organized executive
-          summary, an eye-catching logo, or a website to streamline the customer
-          experience? Iluztra would love to set your business up with a
-          foundation for success. Set up a phone call to speak with our
-          dedicated team.
+          Are you looking to take your business to the next level with an
+          elegant and well-organized executive summary, an eye-catching logo, or
+          a streamlined website? If so, Ilustró is here to help you lay the
+          foundation for success. By using language that speaks directly to your
+          customer's needs, we'll help you achieve your goals and stand out in a
+          crowded market.
         </p>
-        <a
-          class="large-button ff-serif text-white fs-medium letter-spacing-3"
-          href="#about-us"
-          >Schedule a Call</a
+        <button
+          onclick="displayCalendar()"
+          class="ff-serif text-white fs-medium letter-spacing-3"
         >
+          Schedule a Call
+        </button>
+        <!-- Calendly inline widget begin -->
+        <div
+          id="calendar"
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/patriciararagon/30min?hide_gdpr_banner=1&primary_color=4196e1"
+          style="min-width: 320px; height: 975px; display: none"
+        ></div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
+        <!-- Calendly inline widget end -->
       </section>
     </main>
 
-    <footer class="bg-dark">
-      <div class="footer bg-dark">
+    <footer class="bg-white">
+      <div class="footer bg-white">
         <section class="left-side">
           <div>
             <img
               src="https://via.placeholder.com/200x80.png?text=Visit+Design+Pickle"
               class="logo"
             />
-            <p class="ff-serif fs-medium text-white">
+            <p class="ff-serif fs-medium text-black">
               Executive Summaries. Logos. Websites. <br />
               All in one place.
             </p>
           </div>
         </section>
         <section class="right-side">
-          <ul class="footer-list ff-sans-normal fs-700 text-white">
+          <ul class="footer-list ff-sans-normal fs-700">
             <li>
-              <a>About Us</a>
+              <a href="/about.html">About Us</a>
             </li>
             <li>
-              <a>Plans</a>
+              <a href="/pricing.html">Plans</a>
             </li>
             <li>
-              <a>Contact Us</a>
+              <a href="schedule.html">Contact Us</a>
             </li>
           </ul>
         </section>
@@ -116,5 +134,6 @@
     </footer>
 
     <script src="nav.js" defer></script>
+    <script src="schedule.js" defer></script>
   </body>
 </html>

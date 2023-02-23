@@ -1,0 +1,18 @@
+.about-section h1 {
+  padding: 0 0 1rem;
+}
+
+.about-section h1::after {
+  content: " ";
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 2px;
+  top: 0px;
+
+  background-color: var(--gunmetal);
+}
+
+.about-section p {
+  padding: 0 0 2rem;
+}
