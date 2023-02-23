@@ -229,6 +229,16 @@ select {
   flex-shrink: 0;
 }
 
+.header-logo .logo {
+  width: 100px;
+
+  object-fit: fill;
+}
+
+.left-side .logo {
+  width: 200px;
+}
+
 .primary-header {
   width: 100%;
   max-width: 100%;
@@ -586,7 +596,7 @@ button {
   max-width: 80rem;
 
   margin-inline: auto;
-  padding: 5rem 2rem 2rem;
+  padding: 2rem 2rem 3rem;
 }
 
 .footer img {
