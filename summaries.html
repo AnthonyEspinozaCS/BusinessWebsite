@@ -65,36 +65,56 @@
     </header>
 
     <main class="bg-white">
-      <section class="summaries container">
-        <h1 class="ff-sans-normal fs-800">Executive Summaries</h1>
-        <h2 class="ff-serif fs-600">Best Foot Forward</h2>
-        <p class="ff-sans-normal fs-medium">
-          Our Executive Summary service helps companies put their best foot
-          forward in meetings with potential investors and banks. We take the
-          keypoints and operational constraints of your business and turn them
-          into an elegant and professional executive summary design that makes a
-          lasting impression.
-        </p>
-        <h2 class="ff-serif fs-600">Custom Design</h2>
-        <p class="ff-sans-normal fs-medium">
-          Our designs are custom-made and not based on generic templates found
-          online. We prioritize your satisfaction and work closely with you to
-          ensure that your executive summary conveys your business information
-          clearly and concisely.
-        </p>
-        <h2 class="ff-serif fs-600">Revisions</h2>
-        <p class="ff-sans-normal fs-medium">
-          Our pricing plans include revisions and proofs, so we can work
-          together to get the design just right. Our ultimate goal is to help
-          you create an executive summary that leaves an amazing first
-          impression.
-        </p>
-        <a
-          class="large-button ff-serif fs-medium letter-spacing-3"
-          href="/plans.html#exec-summaries"
-          >View Plans</a
-        >
-      </section>
+      <div class="summary-grid container">
+        <section class="summaries">
+          <h1 class="ff-sans-normal fs-800">Executive Summaries</h1>
+          <h2 class="ff-serif fs-600">Best Foot Forward</h2>
+          <p class="ff-sans-normal fs-medium">
+            Our Executive Summary service helps companies put their best foot
+            forward in meetings with potential investors and banks. We take the
+            keypoints and operational constraints of your business and turn them
+            into an elegant and professional executive summary design that makes
+            a lasting impression.
+          </p>
+          <h2 class="ff-serif fs-600">Custom Design</h2>
+          <p class="ff-sans-normal fs-medium">
+            Our designs are custom-made and not based on generic templates found
+            online. We prioritize your satisfaction and work closely with you to
+            ensure that your executive summary conveys your business information
+            clearly and concisely.
+          </p>
+          <h2 class="ff-serif fs-600">Revisions</h2>
+          <p class="ff-sans-normal fs-medium">
+            Our pricing plans include revisions and proofs, so we can work
+            together to get the design just right. Our ultimate goal is to help
+            you create an executive summary that leaves an amazing first
+            impression.
+          </p>
+          <a
+            class="large-button ff-serif fs-medium letter-spacing-3"
+            href="/plans.html#exec-summaries"
+            >View Plans</a
+          >
+        </section>
+        <div class="ex-summary">
+          <picture>
+            <source
+              media="(max-width: 600px"
+              srcset="/src/example_summary.jpg"
+            />
+            <source
+              media="(min-width: 601px"
+              srcset="/src/example_summary.jpg"
+            />
+            <img
+              aria-hidden="true"
+              decoding="async"
+              src="/src/example_summary.jpg"
+              alt="Mock executive summary."
+            />
+          </picture>
+        </div>
+      </div>
     </main>
 
     <footer class="bg-white">

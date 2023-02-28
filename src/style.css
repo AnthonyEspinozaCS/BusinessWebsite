@@ -113,6 +113,10 @@ select {
   gap: var(--gap, 0.25rem);
 }
 
+.relative {
+  position: relative;
+}
+
 .d-block {
   display: block;
 }
@@ -189,6 +193,10 @@ select {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.right {
+  text-align: right;
 }
 
 .fs-900 {
@@ -339,16 +347,40 @@ button {
   }
 }
 
+.top-div {
+  position: relative;
+}
+
 /* Landing Hero */
 .landing-hero {
   position: relative;
   flex-direction: column;
-  width: 100%;
   height: 80vh;
   min-height: 600px;
 
-  background: var(--dark);
+  text-align: left;
   /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 79px;
+}
+
+.wave .shape-fill {
+  fill: #ffffff;
 }
 
 .landing-text {
@@ -391,10 +423,7 @@ button {
   margin-inline: auto;
 }
 
-.about-us,
-.exec-sum,
-.logo-design,
-.web-design {
+.about-us {
   padding: clamp(1rem, 1vw + 1rem, 3rem);
 }
 
@@ -511,7 +540,6 @@ button {
 .three-section {
   flex-direction: column;
   gap: clamp(0rem, 1.25vw - 0.5rem, 1rem);
-  max-width: 100%;
   min-width: 0;
 }
 
@@ -539,8 +567,6 @@ button {
     position: relative;
     display: flex;
     flex-direction: column;
-
-    padding: clamp(0rem, -1.5rem + 3.75vw, 3rem);
 
     text-align: center;
   }
@@ -657,6 +683,153 @@ button {
   text-align: center;
   text-transform: uppercase;
   border-radius: 30px;
+}
+
+.blue-section {
+  position: relative;
+  padding: 5rem;
+
+  background-color: #153565;
+}
+
+.testimonial-section {
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "header"
+    "testimonials";
+
+  padding-bottom: 4rem;
+}
+
+.testimonial-header {
+  grid-area: header;
+
+  color: #fff;
+  text-align: center;
+}
+
+.testimonial-card {
+  position: relative;
+  padding: 2rem 2rem 0rem;
+
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 500ms;
+
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 7px;
+  box-shadow: #4196e1 0px 5px, #00d8d8 0px 10px, #fae6b1 0px 15px;
+  z-index: 1;
+}
+
+.testimonial-card.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.testimonial-card:nth-of-type(odd) {
+  background-color: var(--dark);
+  color: white;
+  text-shadow: 2px 2px 3px #000;
+}
+
+.testimonial-card p {
+  padding-bottom: 2rem;
+
+  font-weight: 700;
+  text-align: justify;
+}
+
+.testimonial-card p:nth-child(2) {
+  font-style: normal;
+  text-align: right;
+}
+
+.testimonial-card:nth-of-type(odd) p:nth-of-type(even) {
+  color: var(--accent-2);
+}
+
+.quotation::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(25vw, 150px);
+  height: min(25vw, 150px);
+  margin: 1.5rem 0 0 1.5rem;
+
+  background-image: url("/src/quotes.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 30%;
+  z-index: -1;
+  opacity: 1;
+}
+
+.triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.triangle svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.triangle .shape-fill {
+  fill: #ffffff;
+}
+
+.flipped-triangle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.flipped-triangle svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.flipped-triangle .shape-fill {
+  fill: #ffffff;
+}
+
+@media (min-width: 1024px) {
+  .testimonial-section {
+    grid-template-areas:
+      "header header"
+      "test-1 test-2"
+      "large-test large-test";
+  }
+
+  .testimonial-card-header {
+    grid-area: header;
+  }
+
+  .testimonial-card:nth-of-type(3) {
+    grid-area: test-1;
+  }
+  .testimonial-card:nth-of-type(2) {
+    grid-area: test-2;
+  }
+  .testimonial-card:nth-of-type(1) {
+    grid-area: large-test;
+  }
 }
 
 @keyframes fadeIn {
