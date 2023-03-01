@@ -785,6 +785,23 @@ button {
   opacity: 1;
 }
 
+.black-quotation::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(25vw, 150px);
+  height: min(25vw, 150px);
+  margin: 1.5rem 0 0 1.5rem;
+
+  background-image: url("/src/black-quotes.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 30%;
+  z-index: -1;
+  opacity: 1;
+}
+
 .triangle {
   position: absolute;
   top: 0;
