@@ -13,3 +13,22 @@ const observer = new IntersectionObserver((entries) => {
 cards.forEach((card) => {
   observer.observe(card);
 });
+
+const bbqLogo = document.querySelector(".bbq-logo");
+
+const logoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(
+    (entry) => {
+      entry.target.classList.toggle("bbq-logo-animation", entry.isIntersecting);
+      if (entry.isIntersecting) {
+        logoObserver.unobserve(entry.target);
+        console.log("bye");
+      }
+    },
+    {
+      threshold: 1,
+    }
+  );
+});
+
+logoObserver.observe(bbqLogo);
