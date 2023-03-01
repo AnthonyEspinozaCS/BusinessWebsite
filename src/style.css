@@ -728,7 +728,7 @@ button {
 .testimonial-card {
   position: relative;
   margin: 0 0 3rem;
-  padding: 2rem 2rem 0rem;
+  padding: calc(2rem + min(25vw, 150px)) 2rem 0rem;
 
   transform: translateX(100px);
   opacity: 0;
