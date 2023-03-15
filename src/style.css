@@ -398,11 +398,59 @@ button {
 .landing-hero {
   position: relative;
   flex-direction: column;
+  flex-wrap: wrap;
   height: 80vh;
-  min-height: 600px;
+  min-height: 930px;
 
   text-align: left;
   /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+}
+
+.logo-row {
+  justify-content: space-around;
+}
+
+@media (max-width: 500px) {
+  .logo-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.logo-animation {
+  max-height: 150px;
+  max-width: 150px;
+
+  border: white 2px solid;
+  border-radius: 50%;
+}
+
+.logo-animation[data-position="middle"] {
+  animation-name: fadeIn-slideIn-2, scaleUp;
+  animation-duration: 500ms, 1000ms;
+  animation-delay: 0ms, 500ms;
+  animation-iteration-count: 1, 1;
+  animation-timing-function: ease-in, ease-in;
+  animation-fill-mode: forwards, forwards;
+}
+
+.logo-animation[data-position="left"] {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-delay: 0ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.logo-animation[data-position="right"] {
+  opacity: 0;
+  animation-name: fadeIn-2;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-delay: 0ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .wave {
@@ -941,6 +989,15 @@ button {
   }
 }
 
+@keyframes fadeIn-2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeIn-slideIn {
   0% {
     opacity: 0;
@@ -949,5 +1006,26 @@ button {
   100% {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+@keyframes fadeIn-slideIn-2 {
+  0% {
+    transform: translateX(50px) rotateY(-180deg);
+  }
+  50% {
+    transform: translateX(25px) rotateY(-90deg);
+  }
+  100% {
+    transform: translateX(0px) rotateY(0deg);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
   }
 }
